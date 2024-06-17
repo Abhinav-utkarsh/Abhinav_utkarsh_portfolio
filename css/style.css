@@ -771,7 +771,7 @@ body.light hr.separator {
 /* Slideshow */
 .portfolio .slideshow {
 	position: fixed;
-	background: rgba(0, 0, 0, 0.85);
+	background: rgba(185, 185, 185, 0.85);
 	width: 100%;
 	height: 100%;
 	top: 0;
@@ -852,7 +852,7 @@ body.light hr.separator {
 .portfolio .slideshow figure {
 	width: 100%;
 	height: 100%;
-	background: #252525;
+	background: #bab9b9;
 	padding: 30px;
 	overflow: auto;
 	border-radius: 10px;
