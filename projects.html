@@ -23,6 +23,14 @@
 
     <!-- Main Stylesheet -->
     <link rel="stylesheet" href="style.css">
+
+    <!-- Custom styles for this page -->
+    <style>
+        .link-unavailable-message {
+            margin-top: 15px;
+            color: var(--text-color);
+        }
+    </style>
 </head>
 <body>
 
@@ -116,7 +124,8 @@
                         <p>A responsive web application concept for musicians to connect, collaborate, and discover new music. The front-end is built with modern HTML5, CSS3, and JavaScript, utilizing Bootstrap for a mobile-first design.</p>
                         <p><strong>Tech Stack:</strong> HTML, CSS, JavaScript, Bootstrap</p>
                         <div class="project-links">
-                            <a href="#" target="_blank" class="btn"><i class="fa-solid fa-globe"></i> Live Demo</a>
+                            <a href="#" onclick="this.parentElement.querySelector('.link-unavailable-message').textContent = 'Link not available'; return false;" class="btn"><i class="fa-solid fa-globe"></i> Live Demo</a>
+                            <p class="link-unavailable-message"></p>
                         </div>
                     </div>
                 </div>
@@ -127,7 +136,8 @@
                         <p>An AI-powered application that generates unique images based on user-provided text prompts. This project leverages modern Generative AI models to create stunning visuals.</p>
                         <p><strong>Tech Stack:</strong> Python, Flask, GenAI APIs, HTML/CSS</p>
                         <div class="project-links">
-                            <a href="#" target="_blank" class="btn"><i class="fa-solid fa-globe"></i> Live Demo</a>
+                            <a href="#" onclick="this.parentElement.querySelector('.link-unavailable-message').textContent = 'Link not available'; return false;" class="btn"><i class="fa-solid fa-globe"></i> Live Demo</a>
+                            <p class="link-unavailable-message"></p>
                         </div>
                     </div>
                 </div>
