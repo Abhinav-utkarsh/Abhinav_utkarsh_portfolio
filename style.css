@@ -558,6 +558,21 @@ section.visible {
 /* 10. SUB-PAGES (CERTIFICATIONS & PROJECTS) */
 .page-section {
     background: var(--second-bg-color);
+    /* Override the default section animation for immediate visibility on page load */
+    opacity: 1;
+    transform: translateY(0);
+    animation: fadeInPageContent 0.6s ease-out;
+}
+
+@keyframes fadeInPageContent {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .cert-snapshot-container {
@@ -616,7 +631,8 @@ section.visible {
     justify-content: center;
     position: relative;
     user-select: none;
-    width: 300px;
+    width: 100%;
+    max-width: 300px;
     margin-left: auto;
     margin-right: auto;
 }
@@ -724,7 +740,7 @@ section.visible {
 }
 .certificate-gallery {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 3rem;
 }
 
