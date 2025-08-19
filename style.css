@@ -1060,12 +1060,10 @@ section.visible {
 }
 
 @media (max-width: 480px) {
-    /* This was originally a grid, but flexbox provides a more reliable wrap for very narrow screens. */
     .skills-container {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 2rem; /* Slightly reduce gap for smaller screens */
+        /* Use a smaller, fixed min-width for cards on narrow screens to prevent overflow */
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 1.5rem; /* Reduce gap for a better fit */
     }
 }
 
