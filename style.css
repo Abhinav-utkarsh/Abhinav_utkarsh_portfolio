@@ -1065,6 +1065,19 @@ section.visible {
         grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
         gap: 1.5rem; /* Reduce gap for a better fit */
     }
+
+    /*
+     * Safari Fix: Explicitly resize skill cards and their contents for smaller viewports.
+     * The default '20rem' width was causing overflow on narrow screens.
+    */
+    .skill-card {
+        width: 14rem;
+        height: 14rem;
+    }
+    .progress-circle {
+        width: 11rem;
+        height: 11rem;
+    }
 }
 
 @media (max-width: 450px) {
