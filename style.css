@@ -1059,6 +1059,16 @@ section.visible {
     }
 }
 
+@media (max-width: 480px) {
+    /* This was originally a grid, but flexbox provides a more reliable wrap for very narrow screens. */
+    .skills-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 2rem; /* Slightly reduce gap for smaller screens */
+    }
+}
+
 @media (max-width: 450px) {
     html {
         font-size: 50%;
