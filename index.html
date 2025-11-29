@@ -278,19 +278,30 @@
         <!-- Contact Section -->
         <section id="contact" class="contact">
             <h2 class="section-title">Contact <span>Me</span></h2>
+
             <div class="contact-content">
                 <form id="contact-form" action="https://api.web3forms.com/submit" method="POST" class="contact-form">
-                    <!-- IMPORTANT: Replace with your Access Key from web3forms.com -->
-                    <input type="hidden" name="access_key" value="2dfe63fd-d322-4730-83fa-6c4cdf714d1d">
-                    <input type="hidden" name="from_name" value="New email from Portfolio Contact Form">
+                    <input type="hidden" name="access_key" value="969d6b74-3d0b-4d75-bb61-8f56b058db9a">
+
+                    <!-- Custom Sender Name -->
+                    <input type="hidden" name="from_name" value="Abhinav Utkarsh Portfolio">
+
+                    <!-- Custom Email Subject with Emoji -->
+                    <input type="hidden" name="subject" value="📩 New Message from Abhinav Utkarsh Portfolio">
+
+                    <!-- User Inputs -->
                     <input type="text" name="name" placeholder="Your Name" required>
                     <input type="email" name="email" placeholder="Your Email" required>
                     <textarea name="message" cols="30" rows="10" placeholder="Your Message" required></textarea>
+
                     <button type="submit" class="btn">Send Message</button>
                     <div id="form-status"></div>
                 </form>
+
                 <div class="contact-info">
-                    <p>Feel free to reach out! I'm always open to discussing new projects, creative ideas, or opportunities to be part of an amazing team.</p>
+                    <p>Feel free to reach out! I'm always open to discussing new projects, creative ideas, or
+                        opportunities to be part of an amazing team.</p>
+
                     <div class="contact-details">
                         <div class="contact-detail-item">
                             <i class="fa-solid fa-envelope"></i>
@@ -331,5 +342,6 @@
 </body>
 
 </html>
+
 
 
