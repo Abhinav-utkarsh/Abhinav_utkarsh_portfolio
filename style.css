@@ -984,179 +984,171 @@ section.visible {
     text-decoration: none;
 }
 
-/* 11. RESPONSIVENESS (MEDIA QUERIES) */
+/* ===================================== */
+/* 11. RESPONSIVENESS (FIXED & CLEANED) */
+/* ===================================== */
 @media (max-width: 1200px) {
-    html {
-        font-size: 55%;
-    }
+   html {
+       font-size: 55%;
+   }
 }
-
+/* ================= 991px ================= */
 @media (max-width: 991px) {
-    .header {
-        padding: 2rem 3%;
-    }
-    section {
-        padding: 10rem 3% 2rem;
-    }
-    .about-content, .startup-content, .contact-content {
-        flex-direction: column;
-        text-align: center;
-        align-items: first baseline;
-    }
-    .about-img img {
-        width: 70vw;
-        margin-bottom: 2rem;
-    }
-    .about-badges {
-        justify-content: center;
-    }
-    .skills-instruction {
-        display: block; /* Show instruction on smaller screens */
-    }
-    .timeline::after {
-        left: 31px;
-    }
-    .timeline-item {
-        width: 100%;
-        padding-left: 70px;
-        padding-right: 25px;
-    }
-    .timeline-item:nth-child(even) {
-        left: 0%;
-    }
-    .timeline-item::after {
-        left: 15px;
-        right: auto; /* Reset right property for mobile view */
-    }
-    /* This is the definitive fix to override the desktop style for even items */
-    .timeline-item:nth-child(even)::after {
-        left: 15px;
-    }
+   .header {
+       padding: 2rem 3%;
+   }
+   section {
+       padding: 10rem 3% 2rem;
+   }
+   /* FIXED: Proper centering */
+   .about-content,
+   .startup-content,
+   .contact-content {
+       flex-direction: column;
+       align-items: center;  /* FIXED */
+       justify-content: center;
+       text-align: center;
+   }
+   .about-img img {
+       width: 70vw;
+       margin-bottom: 2rem;
+   }
+   .startup-logo img {
+       margin-bottom: 2rem;
+   }
+   .about-badges {
+       justify-content: center;
+   }
+   .skills-instruction {
+       display: block;
+       text-align: center;
+   }
+   /* Timeline Mobile Fix */
+   .timeline::after {
+       left: 31px;
+   }
+   .timeline-item {
+       width: 100%;
+       padding-left: 70px;
+       padding-right: 25px;
+   }
+   .timeline-item:nth-child(even) {
+       left: 0;
+   }
+   .timeline-item::after {
+       left: 15px;
+       right: auto;
+   }
+   .timeline-item:nth-child(even)::after {
+       left: 15px;
+   }
 }
-
+/* ================= 768px ================= */
 @media (max-width: 768px) {
-    #menu-icon {
-        display: block;
-    }
-    .navbar {
-        position: absolute;
-        top: 100%;
-        left: 0;
-        width: 100%;
-        padding: 1rem 3%;
-        background: var(--bg-color);
-        border-top: 1px solid var(--border-color);
-        display: none;
-    }
-    .navbar.active {
-        display: block;
-    }
-    .navbar a {
-        display: block;
-        font-size: 2rem;
-        margin: 3rem 0;
-    }
-    .hero-content h1 {
-        font-size: 5rem;
-    }
-    .hero-content h3 {
-        font-size: 2.6rem;
-    }
-    .project-item {
-        grid-template-columns: 1fr;
-    }
-    .project-item:nth-child(odd) .project-item-img {
-        order: 0; /* Reset order for mobile */
-    }
-    .footer {
-        flex-direction: column-reverse;
-        gap: 2rem;
-        text-align: center;
-    }
+   #menu-icon {
+       display: block;
+   }
+   .navbar {
+       position: absolute;
+       top: 100%;
+       left: 0;
+       width: 100%;
+       padding: 1rem 3%;
+       background: var(--bg-color);
+       border-top: 1px solid var(--border-color);
+       display: none;
+   }
+   .navbar.active {
+       display: block;
+   }
+   .navbar a {
+       display: block;
+       font-size: 2rem;
+       margin: 2rem 0;
+       text-align: center;
+   }
+   .hero-content h1 {
+       font-size: 4.2rem;
+   }
+   .hero-content h3 {
+       font-size: 2.4rem;
+   }
+   /* ===== SKILLS FIX ===== */
+   .skills {
+       text-align: center;
+   }
+   .skills-container {
+       display: grid !important;
+       grid-template-columns: 1fr;
+       justify-items: center;
+       gap: 2rem;
+       width: 100%;
+   }
+   .skill-card {
+       width: 90%;
+       max-width: 320px;
+       margin: 0 auto;
+   }
+   /* ===== STARTUP CENTER ===== */
+   .startup-content {
+       padding: 3rem 2rem;
+   }
+   /* ===== CONTACT FIX ===== */
+   .contact-form {
+       width: 100%;
+       max-width: 400px;
+       margin: 0 auto;
+   }
+   .contact-info {
+       text-align: center;
+   }
+   .contact-detail-item {
+       justify-content: center;
+   }
+   .project-item {
+       grid-template-columns: 1fr;
+   }
+   .project-item:nth-child(odd) .project-item-img {
+       order: 0;
+   }
+   .footer {
+       flex-direction: column-reverse;
+       gap: 2rem;
+       text-align: center;
+   }
 }
-
+/* ================= 480px ================= */
 @media (max-width: 480px) {
-
-    /* Center whole skills section */
-    .skills {
-        text-align: center;
-    }
-
-    /* Center grid properly */
-    .skills-container {
-        display: grid;
-        grid-template-columns: 1fr;   /* One card per row */
-        justify-items: center;        /* Center cards horizontally */
-        gap: 1.8rem;
-        width: 100%;
-    }
-
-    /* Resize and center cards */
-    .skill-card {
-        width: 85%;
-        max-width: 300px;
-        height: 14rem;
-        margin: 0 auto;
-    }
-
-    /* Resize progress circle */
-    .progress-circle {
-        width: 10rem;
-        height: 10rem;
-    }
-
- @media (max-width: 480px) {
-
-    /* Center full section */
-    .skills {
-        text-align: center;
-    }
-
-    /* Center cards */
-    .skills-container {
-        display: grid;
-        grid-template-columns: 1fr;
-        justify-items: center;
-        gap: 1.8rem;
-        width: 100%;
-    }
-
-    .skill-card {
-        width: 85%;
-        max-width: 300px;
-        height: 14rem;
-        margin: 0 auto;
-    }
-
-    .progress-circle {
-        width: 10rem;
-        height: 10rem;
-    }
-
-    /* Mobile heading style */
-    .skills-category {
-        text-align: center;
-        border-left: none;
-        padding-left: 0;
-        margin: 35px 0 20px;
-        display: inline-block;
-    }
-
-    /* Animated underline for mobile */
-    .skills-category::after {
-        content: "";
-        display: block;
-        width: 50%;
-        height: 3px;
-        margin: 6px auto 0;
-        background: var(--main-color);
-        border-radius: 2px;
-        animation: mobileUnderline 0.6s ease forwards;
-    }
-
-    @keyframes mobileUnderline {
-        from { width: 0; }
-        to { width: 50%; }
-    }
-}
+   section {
+       padding: 8rem 5% 2rem;
+   }
+   .about-img img {
+       width: 80vw;
+   }
+   .skill-card {
+       width: 85%;
+       max-width: 300px;
+       height: 14rem;
+   }
+   .progress-circle {
+       width: 10rem;
+       height: 10rem;
+   }
+   /* Mobile Skills Heading */
+   .skills-category {
+       text-align: center;
+       border-left: none;
+       padding-left: 0;
+       margin: 35px 0 20px;
+       display: inline-block;
+   }
+   .skills-category::after {
+       content: "";
+       display: block;
+       width: 50%;
+       height: 3px;
+       margin: 6px auto 0;
+       background: var(--main-color);
+       border-radius: 2px;
+   }
 }
