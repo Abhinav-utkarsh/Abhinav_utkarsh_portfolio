@@ -159,16 +159,21 @@ document.addEventListener('DOMContentLoaded', () => {
         const skillCards = document.querySelectorAll('.skill-card');
 
         // Observer for the initial fade-in animation of the cards
-        const entranceObserver = new IntersectionObserver((entries, observer) => {
-            if (entries[0].isIntersecting) {
-                skillCards.forEach((card, index) => {
-                    setTimeout(() => {
-                        card.classList.add('animated');
-                    }, index * 150); // Stagger the entrance
-                });
-                observer.unobserve(skillsSection); // Stop observing after animation
-            }
-        }, { threshold: 0.2 });
+       const entranceObserver = new IntersectionObserver((entries, observer) => {
+   entries.forEach(entry => {
+       if (entry.isIntersecting) {
+           skillCards.forEach((card, index) => {
+               setTimeout(() => {
+                   card.classList.add('animated');
+               }, index * 150);
+           });
+           observer.unobserve(entry.target);
+       }
+   });
+}, {
+   threshold: 0.05,
+   rootMargin: "0px 0px -80px 0px"
+});
 
         entranceObserver.observe(skillsSection);
 
@@ -326,4 +331,5 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     }
+
 });
